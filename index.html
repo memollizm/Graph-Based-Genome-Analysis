@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Graf Tabanlı Genom Analizi </title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+          }
+        }
+      </script>
+
+</head>
+<body>
+    <div id="heading">
+        <h1>Genom Analizi</h1>
+        <div class="border"></div>
+    </div>
+
+    <div id="progress-container">
+        <div id="progress">Loading...</div>
+    </div>
+        <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
