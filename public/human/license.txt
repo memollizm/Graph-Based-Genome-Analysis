@@ -1,0 +1,11 @@
+Model Information:
+* title:	Male Full Body Ecorche
+* source:	https://sketchfab.com/3d-models/male-full-body-ecorche-ab11ebff89224f03bd75efede1164cf6
+* author:	Diego Luján García (https://sketchfab.com/diegoluga)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Male Full Body Ecorche" (https://sketchfab.com/3d-models/male-full-body-ecorche-ab11ebff89224f03bd75efede1164cf6) by Diego Luján García (https://sketchfab.com/diegoluga) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
