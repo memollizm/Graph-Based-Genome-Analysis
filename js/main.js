@@ -7,7 +7,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace; //Renk uzayı olarak sRGB kullandık
 renderer.setSize(window.innerWidth, window.innerHeight); //Pencere ve renderer boyutunu ayarlar
-renderer.setClearColor(0x000000);
+renderer.setClearColor(0x808080);
 renderer.setPixelRatio(window.devicePixelRatio); //Piksel oranı cihazın piksel oranına eşitlenir
 
 // Gölgelerin etkinleştirilmesi ve tipinin belirlenmesi
@@ -33,6 +33,16 @@ controls.maxPolarAngle = 1.5;
 controls.autoRotate = false;
 controls.target = new THREE.Vector3(0, 15, 0);
 controls.update();
+
+// Panorama fotoğrafın yolu
+const panoramaTexture = new THREE.TextureLoader().load('images/dna.jpg');
+
+// Panorama fotoğrafı düzlem olarak kullanarak 360 derecelik bir ortam oluşturma
+const panoramaGeometry = new THREE.SphereGeometry(500, 60, 40);
+panoramaGeometry.scale(-1, 1, 1); // Geometriyi ters çevirme (inside-out rendering için)
+const panoramaMaterial = new THREE.MeshBasicMaterial({ map: panoramaTexture });
+const panoramaMesh = new THREE.Mesh(panoramaGeometry, panoramaMaterial);
+scene.add(panoramaMesh);
 
 // Zemin oluşturma
 const groundGeometry = new THREE.PlaneGeometry(15, 15, 32, 32);
