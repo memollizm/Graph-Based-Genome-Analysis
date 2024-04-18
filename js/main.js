@@ -38,7 +38,7 @@ controls.update();
 const groundGeometry = new THREE.PlaneGeometry(15, 15, 32, 32);
 groundGeometry.rotateX(-Math.PI / 2);
 const groundMaterial = new THREE.MeshToonMaterial({
-  color: 0x2E8B57, // Farklı bir renk
+  color: 0xcd7f32, // Farklı bir renk
   side: THREE.DoubleSide // Zeminin her iki tarafını da göstermek için
 });
 const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
