@@ -35,7 +35,7 @@ controls.target = new THREE.Vector3(0, 15, 0);
 controls.update();
 
 // Panorama fotoğrafın yolu
-const panoramaTexture = new THREE.TextureLoader().load('images/dna.jpg');
+const panoramaTexture = new THREE.TextureLoader().load('images/3dDna.jpg');
 
 // Panorama fotoğrafı düzlem olarak kullanarak 360 derecelik bir ortam oluşturma
 const panoramaGeometry = new THREE.SphereGeometry(500, 60, 40);
@@ -47,8 +47,8 @@ scene.add(panoramaMesh);
 // Zemin oluşturma
 const groundGeometry = new THREE.PlaneGeometry(15, 15, 32, 32);
 groundGeometry.rotateX(-Math.PI / 2);
-const groundMaterial = new THREE.MeshToonMaterial({
-  color: 0xcd7f32, // Farklı bir renk
+const groundMaterial = new THREE.MeshBasicMaterial({
+  color: 0x87CEEB, // Farklı bir renk
   side: THREE.DoubleSide // Zeminin her iki tarafını da göstermek için
 });
 const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
@@ -103,5 +103,3 @@ function animate() {
 }
 
 animate();
-
-
