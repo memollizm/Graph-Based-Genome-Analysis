@@ -30,7 +30,7 @@ controls.minDistance = 1;
 controls.maxDistance = 50;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
-controls.autoRotate = false;
+controls.autoRotate = false; //Sürekli dönmesi için [true] yapılmalı
 controls.target = new THREE.Vector3(0, 15, 0);
 controls.update();
 
@@ -48,7 +48,7 @@ scene.add(panoramaMesh);
 const groundGeometry = new THREE.PlaneGeometry(15, 15, 32, 32);
 groundGeometry.rotateX(-Math.PI / 2);
 const groundMaterial = new THREE.MeshBasicMaterial({
-  color: 0x87CEEB, // Farklı bir renk
+  color: 0xAFEEEE, // Farklı bir renk
   side: THREE.DoubleSide // Zeminin her iki tarafını da göstermek için
 });
 const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
