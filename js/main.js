@@ -30,7 +30,7 @@ controls.minDistance = 1;
 controls.maxDistance = 50;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
-controls.autoRotate = false; //Sürekli dönmesi için [true] yapılmalı
+controls.autoRotate = true; //Sürekli dönmesi için [true] yapılmalı
 controls.target = new THREE.Vector3(0, 15, 0);
 controls.update();
 
