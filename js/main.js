@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+
 // 3D sahnenin görsel çıktısının oluşturulması
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace; //Renk uzayı olarak sRGB kullandık
@@ -30,7 +31,7 @@ controls.minDistance = 1;
 controls.maxDistance = 50;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
-controls.autoRotate = true; //Sürekli dönmesi için [true] yapılmalı
+controls.autoRotate = false; //Sürekli dönmesi için [true] yapılmalı
 controls.target = new THREE.Vector3(0, 15, 0);
 controls.update();
 
