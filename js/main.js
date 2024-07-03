@@ -96,6 +96,70 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
+// Liste verileri
+const bodyParts = {
+  'Kafa': ['Ense', 'Burun', 'Kafatası', 'Kulak', 'Göz', 'Ağız'],
+  'Kol-Bilek-Parmak': ['Kol', 'Bilek', 'Parmak'],
+  'Vücut': ['Kalp', 'Akciğer', 'Karaciğer', 'Mide', 'Bağırsak', 'Üreme Organı', 'Bacak', 'Diz', 'Ön Ayak', 'Ayak']
+};
+
+// Menü butonu ve içeriği
+const menuButton = document.getElementById('menu-button');
+const menuContent = document.getElementById('menu-content');
+const infoBox = document.getElementById('info-box');
+const infoText = document.getElementById('info-text');
+
+// Menü içeriğini oluştur
+for (const category in bodyParts) {
+  const categoryButton = document.createElement('button');
+  categoryButton.textContent = category;
+  categoryButton.classList.add('category-button');
+  menuContent.appendChild(categoryButton);
+
+  const sublist = document.createElement('div');
+  sublist.classList.add('sublist');
+
+  bodyParts[category].forEach(part => {
+      const partButton = document.createElement('button');
+      partButton.textContent = part;
+      partButton.classList.add('part-button');
+      partButton.style.display = 'none'; // İlk başta gizli olarak ayarla
+      sublist.appendChild(partButton);
+
+      // Part butonuna tıklandığında
+      partButton.addEventListener('click', () => {
+        const selectedPart = partButton.textContent;
+        infoText.textContent = `Seçilen parça: ${selectedPart}`;
+        infoBox.style.right = '10px'; // Kayan kutuyu ekrana getir
+      });
+  });
+
+  // Kategori butonuna tıklandığında alt menüyü göster
+  categoryButton.addEventListener('click', () => {
+    // Tüm alt menüleri gizle
+    const allSublists = document.querySelectorAll('.sublist');
+    allSublists.forEach(sublist => {
+      sublist.style.display = 'none';
+    });
+    // Seçilen kategori altındaki alt menüyü göster
+    sublist.style.display = 'block';
+  });
+
+  menuContent.appendChild(sublist);
+}
+
+// Menü butonuna tıklandığında menü içeriğini göster/gizle
+menuButton.addEventListener('click', () => {
+  menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+});
+
+// Dışarı tıklama ile menüyü gizle
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('#side-menu')) {
+      menuContent.style.display = 'none';
+  }
+});
+
 // Sonsuz döngü içerisinde sahnenin sürekli olarak yenilenmesi
 function animate() {
   requestAnimationFrame(animate);
