@@ -43,10 +43,13 @@ body {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #4CAF50;
+  margin-left: 10px;
+  background-color: #0e37b4;
   color: white;
   border: none;
   cursor: pointer;
+  position: relative; /* Butonu göreceli olarak konumlandır */
+  margin-top: 20px; /* Butonun üst kısmına boşluk ekle */
 }
 
 #menu-content {
@@ -59,11 +62,20 @@ body {
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
+  margin-left: 3px;
   background-color: #d84d31;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.category-button.active {
+  background-color: #d84d31;
+}
+
+.part-button.active {
+  background-color: #0d7acd;
 }
 
 .category-button:hover {
@@ -107,4 +119,5 @@ body {
 
 #info-text {
   margin: 0;
+  font-size: 18px;
 }
