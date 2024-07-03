@@ -1,70 +1,110 @@
+/* Genel sayfa stil ayarları */
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    background-color: black;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  position: relative; /* Sayfanın pozisyonunu göreceli olarak ayarla */
 }
 
-header {
-    margin-top: 3em;
-    text-align: center;
-    color: white;
+/* Başlık ve border stil ayarları */
+#heading {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; /* Başlığı göreceli olarak konumlandır */
 }
 
-header h1 {
-    font-size: 2em;
-    font-weight: 900;
+.border {
+  border: 1px solid white;
+  margin: 10px auto;
+  width: 50%;
 }
 
-#container3D canvas {
-    width: 100vw !important;
-    height: 100vh !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Sol menü stil ayarları */
+#side-menu {
+  background-color: #f1f1f1;
+  width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: absolute; /* Menünün mutlak konumlandırılması */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 50; /* Menünün diğer içeriklerin üzerinde olmasını sağla */
 }
 
-@font-face {
-    font-family: 'SF Distant Galaxy';
-    src: local('SF Distant Galaxy'), url(fonts/SF\ Distant\ Galaxy.ttf), format('ttf');
-  }
-  
-  body {
-    background-color: black;
-    margin: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-  }
-  
-  #heading {
-    position: fixed;
-    width: 100%;
-    padding: 32px;
-  }
-  
-  .border {
-    background: linear-gradient(90deg, rgb(128, 128, 128), 50%, black);
-    height: 2px;
-    width: 80vw;
-    margin-top: 4px;
-  }
-  
-  h1 {
-    color: rgb(10, 13, 10);
-    font-size: 4em;
-    margin: 0px;
-    font-weight: 100;
-  }
-  
-  #progress-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #progress {
-    font-size: 3em;
-    color: white;
-  }
+#menu-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
+#menu-content {
+  display: none;
+  padding-left: 10px;
+}
+
+.category-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #d84d31;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #0c0c0c;
+}
+
+.sublist {
+  display: none;
+  padding-left: 20px;
+}
+
+.part-button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.part-button:hover {
+  background-color: #45a07b;
+}
+
+/* Kayan kutu stil ayarları */
+#info-box {
+  background-color: #ddd;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -220px; /* Başlangıçta ekranın dışında */
+  width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: right 0.3s ease-in-out;
+  z-index: 100; /* Kayan kutunun diğer içeriklerin üzerinde olmasını sağla */
+}
+
+#info-text {
+  margin: 0;
+}
